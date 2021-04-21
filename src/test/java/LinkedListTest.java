@@ -51,6 +51,15 @@ class LinkedListTest {
     }
 
     @Test
+    void containsTest() {
+        boolean isContains = linkedList.contains(4);
+        assertTrue(isContains);
+
+        isContains = linkedList.contains(10);
+        assertFalse(isContains);
+    }
+
+    @Test
     void shouldGetAllInArray() {
         Object[] elements = linkedList.getAllInArray();
         assertEquals(elements[0], 1);

@@ -80,6 +80,18 @@ public class LinkedList<T> {
         return false;
     }
 
+    public boolean contains(T element) {
+        Node<T> current = head;
+        while (current != null) {
+            if (current.value.equals(element)) {
+                return true;
+            }
+            current = current.next;
+        }
+
+        return false;
+    }
+
     public Object[] findNMaxElements(int N) {
         Object[] elements = getAllInArray();
 
