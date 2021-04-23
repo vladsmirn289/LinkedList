@@ -1,7 +1,7 @@
-package com.example.collection.List;
+package com.example.collection.list;
 
-import com.example.collection.Iterator.Iterator;
-import com.example.collection.Iterator.LinkedListIterator;
+import com.example.collection.iterator.Iterator;
+import com.example.collection.iterator.LinkedListIterator;
 import com.example.collection.Node;
 
 /**
@@ -46,7 +46,7 @@ public class LinkedList<T> implements List<T> {
      * @param newElement element that will be added to the end of this list
      */
     public void add(T newElement) {
-        Node<T> newNode = new Node<T>(newElement);
+        Node<T> newNode = new Node<>(newElement);
 
         if (head == null) {
             head = newNode;
@@ -121,60 +121,6 @@ public class LinkedList<T> implements List<T> {
      * @return an iterator
      */
     public Iterator<T> getIterator() {
-        return new LinkedListIterator<T>(head);
+        return new LinkedListIterator<>(head);
     }
-
-    //TODO: replace to another class
-    /*public Object[] findNMaxElements(int N) {
-        Object[] elements = getAllInArray();
-
-        for (int i = 0; i < size; ++i) {
-            for (int k = i+1; k < size; ++k) {
-                String first = elements[i].toString();
-                String second = elements[k].toString();
-                if (first.compareTo(second) > 0) {
-                    Object tempToSwap = elements[i];
-                    elements[i] = elements[k];
-                    elements[k] = tempToSwap;
-                }
-            }
-        }
-
-        int counter = 0;
-        Object[] nMaxElements = new Object[N];
-        int initIndex = size - N;
-
-        if (initIndex < 0) {
-            initIndex = 0;
-        }
-
-        while (initIndex < size) {
-            nMaxElements[counter] = elements[initIndex];
-            ++initIndex;
-            ++counter;
-        }
-
-        return nMaxElements;
-    }
-
-    public Object[] getAllInArray() {
-        int counter = 0;
-        Object[] elements = new Object[size];
-        Node<T> current = head;
-        while (current != null) {
-            elements[counter] = current.value;
-            current = current.next;
-            ++counter;
-        }
-
-        return elements;
-    }
-
-    public void printAll() {
-        Node<T> current = head;
-        while (current != null) {
-            System.out.println(current.value);
-            current = current.next;
-        }
-    }*/
 }

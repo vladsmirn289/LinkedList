@@ -1,6 +1,6 @@
-package com.example.collection.List;
+package com.example.collection.list;
 
-import com.example.collection.Iterator.Iterable;
+import com.example.collection.iterator.Iterable;
 
 /**
  * A list represents an ordered collection which can store

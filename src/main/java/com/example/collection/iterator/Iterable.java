@@ -1,4 +1,4 @@
-package com.example.collection.Iterator;
+package com.example.collection.iterator;
 
 /**
  * Provides a factory method that creates a specific iterator.

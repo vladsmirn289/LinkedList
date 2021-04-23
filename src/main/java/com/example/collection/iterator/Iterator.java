@@ -1,4 +1,4 @@
-package com.example.collection.Iterator;
+package com.example.collection.iterator;
 
 /**
  * Common iterator which can iterate all elements calling the
@@ -7,6 +7,7 @@ package com.example.collection.Iterator;
  * be able to use it.
  *
  * @param <T> the type of elements
+ * @see LinkedListIterator
  */
 public interface Iterator<T> {
     /**

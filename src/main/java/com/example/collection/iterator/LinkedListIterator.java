@@ -1,4 +1,4 @@
-package com.example.collection.Iterator;
+package com.example.collection.iterator;
 
 import com.example.collection.Node;
 
