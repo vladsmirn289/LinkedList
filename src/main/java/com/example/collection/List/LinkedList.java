@@ -1,40 +1,111 @@
-public class LinkedList<T> {
+package com.example.collection.List;
+
+/**
+ * A collection represents an ordered, unidirectional list which
+ * can store duplicates. The user can add an element to end of it,
+ * remove concrete element, check whether list contains
+ * some item or not and also to see the number of stored elements.
+ *
+ * @param <T> the type of all elements in LinkedList
+ * @author Vladislav Smirnov
+ */
+public class LinkedList<T> implements List<T> {
+    /**
+     * First node in list.
+     */
     private Node<T> head;
+
+    /**
+     * Keep the number of elements
+     */
     private int size;
 
+    /**
+     * Constructs an empty linked list
+     */
     public LinkedList() {
 
     }
 
+    /**
+     * A simple node which needed to implement the linked list structure.
+     * It is a holder that stores the value and also has the pointer
+     * to the next node. If the current node is tail, the pointer to
+     * the next will be null.
+     *
+     * @param <E> the type of value that can be stored in node
+     */
     private static class Node<E> {
+        /**
+         * Stores pointer to the next node.
+         */
         private Node<E> next;
+
+        /**
+         * Stores the value
+         */
         private E value;
 
+        /**
+         * Constructs a node with specified value.
+         *
+         * @param value value that node will be holds.
+         */
         public Node(E value) {
             this.value = value;
         }
 
+        /**
+         * Returns the next node.
+         *
+         * @return the next node in current chain.
+         */
         public Node<E> getNext() {
             return next;
         }
 
+        /**
+         * Sets the next node.
+         *
+         * @param next node that will be next.
+         */
         public void setNext(Node<E> next) {
             this.next = next;
         }
 
-        public E getElement() {
+        /**
+         * Returns the current held value.
+         *
+         * @return the current held value.
+         */
+        public E getValue() {
             return value;
         }
 
-        public void setElement(E value) {
+        /**
+         * Sets the value that will be held this node.
+         *
+         * @param value value that will be held this node.
+         */
+        public void setValue(E value) {
             this.value = value;
         }
     }
 
+    /**
+     * Returns the number of all stored elements in this list.
+     *
+     * @return the number of stored elements
+     */
     public int size() {
         return size;
     }
 
+    /**
+     * Appends the new element to the end of this list.
+     *
+     * @param newElement element that will be added to the end of this list.
+     */
     public void add(T newElement) {
         Node<T> newNode = new Node<T>(newElement);
 
@@ -52,6 +123,13 @@ public class LinkedList<T> {
         ++size;
     }
 
+    /**
+     * Removes the concrete element from this list. If the element is not
+     * in the list, nothing happens.
+     *
+     * @param toRemove element which will be removed from this list.
+     * @return true if element was removed from the list, false otherwise.
+     */
     public boolean remove(T toRemove) {
         Node<T> current = head;
         Node<T> previous = null;
@@ -70,7 +148,6 @@ public class LinkedList<T> {
                 head = current.next;
             } else {
                 previous.next = current.next;
-                current = null; //for garbage collector
             }
 
             --size;
@@ -80,6 +157,12 @@ public class LinkedList<T> {
         return false;
     }
 
+    /**
+     * Check whether the concrete element is contains in this list or not.
+     *
+     * @param element element which will be tested on presence in this list.
+     * @return true if the element is contains in this list, false otherwise.
+     */
     public boolean contains(T element) {
         Node<T> current = head;
         while (current != null) {
@@ -92,7 +175,8 @@ public class LinkedList<T> {
         return false;
     }
 
-    public Object[] findNMaxElements(int N) {
+    //TODO: remove to another class
+    /*public Object[] findNMaxElements(int N) {
         Object[] elements = getAllInArray();
 
         for (int i = 0; i < size; ++i) {
@@ -143,5 +227,5 @@ public class LinkedList<T> {
             System.out.println(current.value);
             current = current.next;
         }
-    }
+    }*/
 }
