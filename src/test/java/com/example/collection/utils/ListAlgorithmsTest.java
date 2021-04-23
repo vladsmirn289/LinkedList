@@ -46,7 +46,16 @@ public class ListAlgorithmsTest {
         assertEquals(4, moreMaxElements[2]);
         assertEquals(5, moreMaxElements[3]);
 
-        twoMaxElements = ListAlgorithms.findNMaxElements(linkedList, 10);
-        Arrays.asList(twoMaxElements).forEach(System.out::println);
+        testList.add(10);
+        testList.add(100);
+        testList.add(50);
+        moreMaxElements = ListAlgorithms.findNMaxElements(testList, 9);
+        assertEquals(1, moreMaxElements[0]);
+        assertEquals(2, moreMaxElements[1]);
+        assertEquals(4, moreMaxElements[2]);
+        assertEquals(5, moreMaxElements[3]);
+        assertEquals(10, moreMaxElements[4]);
+        assertEquals(50, moreMaxElements[5]);
+        assertEquals(100, moreMaxElements[6]);
     }
 }
