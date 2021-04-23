@@ -1,3 +1,4 @@
+import com.example.collection.Iterator.Iterator;
 import com.example.collection.List.LinkedList;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -29,7 +30,6 @@ class LinkedListTest {
         emptyList.add(2);
         emptyList.add(3);
 
-        //emptyList.printAll();
         assertEquals(3, emptyList.size());
     }
 
@@ -38,7 +38,6 @@ class LinkedListTest {
         boolean isRemovedFour = linkedList.remove(4);
         boolean isRemovedThree = linkedList.remove(3);
 
-        //linkedList.printAll();
         assertEquals(6, linkedList.size());
         assertTrue(isRemovedFour);
         assertTrue(isRemovedThree);
@@ -58,6 +57,20 @@ class LinkedListTest {
 
         isContains = linkedList.contains(10);
         assertFalse(isContains);
+    }
+
+    @Test
+    void iteratorTest() {
+        Iterator<Integer> iterator = linkedList.getIterator();
+        assertEquals(1, iterator.next());
+        assertEquals(5, iterator.next());
+        assertEquals(8, iterator.next());
+        assertEquals(4, iterator.next());
+        assertEquals(3, iterator.next());
+        assertEquals(3, iterator.next());
+        assertEquals(9, iterator.next());
+        assertEquals(0, iterator.next());
+        assertFalse(iterator.hasNext());
     }
 
     /*@Test

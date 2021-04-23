@@ -1,5 +1,7 @@
 package com.example.collection.List;
 
+import com.example.collection.Iterator.Iterable;
+
 /**
  * A list represents an ordered collection which can store
  * duplicates. The user can add an element to end of it,
@@ -10,7 +12,7 @@ package com.example.collection.List;
  * @author Vladislav Smirnov
  * @see LinkedList
  */
-public interface List<T> {
+public interface List<T> extends Iterable<T> {
     /**
      * Returns the number of all stored elements in this list.
      *
@@ -21,7 +23,7 @@ public interface List<T> {
     /**
      * Appends the new element to the end of this list.
      *
-     * @param newElement element that will be added to the end of this list.
+     * @param newElement element that will be added to the end of this list
      */
     void add(T newElement);
 
@@ -29,16 +31,16 @@ public interface List<T> {
      * Removes the concrete element from this list. If the element is not
      * in the list, nothing happens.
      *
-     * @param toRemove element which will be removed from this list.
-     * @return true if element was removed from the list, false otherwise.
+     * @param toRemove element which will be removed from this list
+     * @return true if element was removed from the list, false otherwise
      */
     boolean remove(T toRemove);
 
     /**
-     * Check whether the concrete element is contains in this list or not.
+     * Checks whether the concrete element is contains in this list or not.
      *
-     * @param element element which will be tested on presence in this list.
-     * @return true if the element is contains in this list, false otherwise.
+     * @param element element which will be tested on presence in this list
+     * @return true if the element is contains in this list, false otherwise
      */
     boolean contains(T element);
 }
